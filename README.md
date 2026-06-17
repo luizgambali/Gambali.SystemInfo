@@ -30,16 +30,16 @@ O projeto segue uma estrutura em camadas inspirada na **Clean Architecture**:
 
 ```
 HardwareScanner/
-??? Domain/
-?   ??? Models/             # Modelos de dados (CpuInfo, DiskInfo, etc.)
-??? Application/
-?   ??? Interfaces/         # Contratos (IHardwareCollector, IJsonExporter)
-?   ??? Services/           # Implementações (HardwareCollector, JsonExporter)
-??? Infrastructure/
-?   ??? HardwareInfoProvider.cs  # Acesso à biblioteca Hardware.Info
-??? Extensions/
-?   ??? ServiceCollectionExtensions.cs  # Registro de dependências
-??? Program.cs              # Ponto de entrada
+Domain/
+   Models/             # Modelos de dados (CpuInfo, DiskInfo, etc.)
+Application/
+   Interfaces/         # Contratos (IHardwareCollector, IJsonExporter)
+   Services/           # Implementações (HardwareCollector, JsonExporter)
+Infrastructure/
+   HardwareInfoProvider.cs  # Acesso à biblioteca Hardware.Info
+Extensions/
+   ServiceCollectionExtensions.cs  # Registro de dependências
+Program.cs              # Ponto de entrada
 ```
 
 ---
