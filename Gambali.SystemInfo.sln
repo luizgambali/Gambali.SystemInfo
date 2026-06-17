@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37328.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HardwareScanner", "src\HardwareScanner\HardwareScanner.csproj", "{191D49C9-2F22-4007-9864-D847E9400FAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{191D49C9-2F22-4007-9864-D847E9400FAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{191D49C9-2F22-4007-9864-D847E9400FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{191D49C9-2F22-4007-9864-D847E9400FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{191D49C9-2F22-4007-9864-D847E9400FAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E736636-5F5D-4AB8-9BCA-043C06B7192E}
+	EndGlobalSection
+EndGlobal
