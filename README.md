@@ -1,20 +1,20 @@
-# ??? HardwareScanner
+# HardwareScanner
 
-> ?? **Este projeto foi gerado com auxílio de Inteligência Artificial (GitHub Copilot).** O código foi revisado e tem fins exclusivamente didáticos.
+> **Este projeto foi gerado com auxÃ­lio de InteligÃªncia Artificial (GitHub Copilot).** O cÃ³digo foi revisado e tem fins exclusivamente didÃ¡ticos.
 
 Projeto demonstrativo em **C# / .NET 9**
 
 ---
 
-## ?? Sobre o Projeto
+## Sobre o Projeto
 
-O objetivo é ilustrar, de maneira didática, como coletar dados de hardware (CPU, memória RAM, GPU, discos e placa-mãe) utilizando C# e exportar essas informações estruturadas em JSON, utilizando boas práticas de arquitetura como injeção de dependência e separação de responsabilidades.
+O objetivo Ã© ilustrar, de maneira didÃ¡tica, como coletar dados de hardware (CPU, memÃ³ria RAM, GPU, discos e placa-mÃ£e) utilizando C# e exportar essas informaÃ§Ãµes estruturadas em JSON, utilizando boas prÃ¡ticas de arquitetura como injeÃ§Ã£o de dependÃªncia e separaÃ§Ã£o de responsabilidades.
 
 ---
 
-## ?? Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
-| Tecnologia | Versão |
+| Tecnologia | VersÃ£o |
 |---|---|
 | .NET | 9.0 |
 | [Hardware.Info](https://github.com/Jinjinov/Hardware.Info) | 110.0.0.1 |
@@ -24,7 +24,7 @@ O objetivo é ilustrar, de maneira didática, como coletar dados de hardware (CPU,
 
 ---
 
-## ??? Arquitetura
+## Arquitetura
 
 O projeto segue uma estrutura em camadas inspirada na **Clean Architecture**:
 
@@ -34,57 +34,57 @@ HardwareScanner/
 ?   ??? Models/             # Modelos de dados (CpuInfo, DiskInfo, etc.)
 ??? Application/
 ?   ??? Interfaces/         # Contratos (IHardwareCollector, IJsonExporter)
-?   ??? Services/           # Implementações (HardwareCollector, JsonExporter)
+?   ??? Services/           # ImplementaÃ§Ãµes (HardwareCollector, JsonExporter)
 ??? Infrastructure/
-?   ??? HardwareInfoProvider.cs  # Acesso à biblioteca Hardware.Info
+?   ??? HardwareInfoProvider.cs  # Acesso Ã  biblioteca Hardware.Info
 ??? Extensions/
-?   ??? ServiceCollectionExtensions.cs  # Registro de dependências
+?   ??? ServiceCollectionExtensions.cs  # Registro de dependÃªncias
 ??? Program.cs              # Ponto de entrada
 ```
 
 ---
 
-## ?? Dados Coletados
+## Dados Coletados
 
-O snapshot de hardware é composto pelas seguintes informações:
+O snapshot de hardware Ã© composto pelas seguintes informaÃ§Ãµes:
 
-### ?? CPU
-| Campo | Descrição |
+### CPU
+| Campo | DescriÃ§Ã£o |
 |---|---|
 | `Name` | Nome do processador |
-| `Cores` | Número de núcleos físicos |
-| `Threads` | Número de threads lógicos |
-| `ClockMHz` | Frequência máxima (MHz) |
+| `Cores` | NÃºmero de nÃºcleos fÃ­sicos |
+| `Threads` | NÃºmero de threads lÃ³gicos |
+| `ClockMHz` | FrequÃªncia mÃ¡xima (MHz) |
 
-### ?? Memória RAM (por módulo)
-| Campo | Descrição |
+### MemÃ³ria RAM (por mÃ³dulo)
+| Campo | DescriÃ§Ã£o |
 |---|---|
 | `Manufacturer` | Fabricante |
 | `CapacityGb` | Capacidade em GB |
 | `SpeedMHz` | Velocidade (MHz) |
 
-### ?? GPU (por placa)
-| Campo | Descrição |
+### GPU (por placa)
+| Campo | DescriÃ§Ã£o |
 |---|---|
-| `Name` | Nome da placa de vídeo |
-| `MemoryMb` | Memória de vídeo em MB |
+| `Name` | Nome da placa de vÃ­deo |
+| `MemoryMb` | MemÃ³ria de vÃ­deo em MB |
 
-### ?? Disco (por dispositivo)
-| Campo | Descrição |
+### Disco (por dispositivo)
+| Campo | DescriÃ§Ã£o |
 |---|---|
 | `Model` | Modelo do disco |
 | `SizeGb` | Capacidade em GB |
-| `Serial` | Número de série |
+| `Serial` | NÃºmero de sÃ©rie |
 
-### ?? Placa-mãe
-| Campo | Descrição |
+### Placa-mÃ£e
+| Campo | DescriÃ§Ã£o |
 |---|---|
 | `Manufacturer` | Fabricante |
 | `Product` | Modelo |
 
 ---
 
-## ?? Exemplo de Saída JSON
+## Exemplo de SaÃ­da JSON
 
 ```json
 {
@@ -133,77 +133,77 @@ O snapshot de hardware é composto pelas seguintes informações:
 
 ---
 
-## ?? Como Executar
+## Como Executar
 
-### Pré-requisitos
+### PrÃ©-requisitos
 
 - [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0) instalado
 
 ### Passos
 
 ```bash
-# Clone o repositório
+# Clone o repositÃ³rio
 git clone https://github.com/seu-usuario/Gambali.SystemInfo.git
 
-# Acesse o diretório do projeto
+# Acesse o diretÃ³rio do projeto
 cd Gambali.SystemInfo/src/HardwareScanner
 
-# Restaure as dependências
+# Restaure as dependÃªncias
 dotnet restore
 
 # Execute o projeto
 dotnet run
 ```
 
-O JSON com as informações do hardware da sua máquina será exibido no console.
+O JSON com as informaÃ§Ãµes do hardware da sua mÃ¡quina serÃ¡ exibido no console.
 
 ---
 
-## ?? Como Funciona
+## Como Funciona
 
-1. **`Program.cs`** configura o host com injeção de dependência via `AddHardwareScanner()`.
+1. **`Program.cs`** configura o host com injeÃ§Ã£o de dependÃªncia via `AddHardwareScanner()`.
 2. **`HardwareInfoProvider`** encapsula a biblioteca `Hardware.Info` e aciona `RefreshAll()` para ler os dados do sistema operacional.
-3. **`HardwareCollector`** mapeia os dados brutos para os modelos do domínio (`CpuInfo`, `MemoryInfo`, `GpuInfo`, `DiskInfo`, `MotherboardInfo`), agrupados no `HardwareSnapshot`.
-4. **`JsonExporter`** serializa o snapshot usando `System.Text.Json` com formatação indentada (`WriteIndented = true`).
-5. O JSON final é impresso no console.
+3. **`HardwareCollector`** mapeia os dados brutos para os modelos do domÃ­nio (`CpuInfo`, `MemoryInfo`, `GpuInfo`, `DiskInfo`, `MotherboardInfo`), agrupados no `HardwareSnapshot`.
+4. **`JsonExporter`** serializa o snapshot usando `System.Text.Json` com formataÃ§Ã£o indentada (`WriteIndented = true`).
+5. O JSON final Ã© impresso no console.
 
 ---
 
-## ?? Estrutura de Arquivos
+## Estrutura de Arquivos
 
 ```
 Gambali.SystemInfo/
-??? src/
-?   ??? HardwareScanner/
-?       ??? Application/
-?       ?   ??? Interfaces/
-?       ?   ?   ??? IHardwareCollector.cs
-?       ?   ?   ??? IJsonExporter.cs
-?       ?   ??? Services/
-?       ?       ??? HardwareCollector.cs
-?       ?       ??? JsonExporter.cs
-?       ??? Domain/
-?       ?   ??? Models/
-?       ?       ??? CpuInfo.cs
-?       ?       ??? DiskInfo.cs
-?       ?       ??? GpuInfo.cs
-?       ?       ??? HardwareSnapshot.cs
-?       ?       ??? MemoryInfo.cs
-?       ?       ??? MotherboardInfo.cs
-?       ??? Extensions/
-?       ?   ??? ServiceCollectionExtensions.cs
-?       ??? Infrastructure/
-?       ?   ??? HardwareInfoProvider.cs
-?       ??? HardwareScanner.csproj
-?       ??? Program.cs
-??? README.md
+src/
+   HardwareScanner/
+       Application/
+          Interfaces/
+             IHardwareCollector.cs
+             IJsonExporter.cs
+          Services/
+              HardwareCollector.cs
+              JsonExporter.cs
+       Domain/
+          Models/
+              CpuInfo.cs
+              DiskInfo.cs
+              GpuInfo.cs
+              HardwareSnapshot.cs
+              MemoryInfo.cs
+              MotherboardInfo.cs
+       Extensions/
+          ServiceCollectionExtensions.cs
+       Infrastructure/
+          HardwareInfoProvider.cs
+       HardwareScanner.csproj
+       Program.cs
+ README.md
 ```
 
 ---
 
-## ?? Licença
+## LicenÃ§a
 
-Este projeto está licenciado sob a **MIT License**.
+Este projeto estÃ¡ licenciado sob a **MIT License**.
 
 ```
 MIT License
